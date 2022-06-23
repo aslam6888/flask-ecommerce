@@ -1,0 +1,68 @@
+{%extends 'ecommerce/index.html'%}
+<!--Title-->
+{%block title%}Mobiles{%endblock%}
+<!--Content-->
+{%block content%}
+<div>
+  <div>
+    <img class='img-fluid rounded my-4'
+      src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1655573183/Croma%20Assets/CMS/Brand%20Page%20Banners/2022/Apple/HP_EverythingApple_LastDay_18June2022_mlrjmm.png/mxw_1920,f_auto"
+      alt="">
+  </div>
+  <div>
+    <h5 class="my-3">Trending <i class="fa-solid fa-fire"></i></h5>
+    <div class="row">
+      {%for datas in data %}
+      <div class="col-3" style="position:relative;">
+        <div class='item-card p-3'>
+          <div class="mt-2 text-center">
+            <img
+              height="200"
+              src="{{datas.img_url}}"
+              alt="Front of men&#039;s Basic Tee in black." class="im">
+          </div>
+          <div class="mt-4">
+            <div>
+              <a href="/product/{{datas.id}}" class="product-link">
+                {{datas.name}}
+              </a>
+              <div>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star text-warning"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+              </div>
+            </div>
+            <h6 class="py-1">₹ {{datas.price}}</h6>
+            <div style="position:absolute;top:30%;left:25%;" >
+              <button 
+              class="cart-btn btn btn-primary" 
+              onclick="addcart('{{datas.id}}')"
+              >
+              Add to cart <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+      {%endfor%}
+      <!-- More products... -->
+    </div>
+  </div>
+  <div class="my-3">
+    <h5 class="my-3">Best Value Smartphones</h5>
+    <div class="row ">
+      <div class="col-6">
+        <img height="400" width="100%" class=' rounded' src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1655347715/Croma%20Assets/CMS/CAtegory/Mobile%20phone%20-%20C10/16-06-2022/LP_2Split_CromaSPFest_VivoV21_15June2022_rgefck.png/mxw_1920,f_auto" alt="">
+      </div>
+      <div class="col-6">
+        <img height="400"  class=' rounded' src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1655347714/Croma%20Assets/CMS/CAtegory/Mobile%20phone%20-%20C10/16-06-2022/LP_2Split_CromaSPFest_OppoF19s_15June2022_k5whyn.png/mxw_1920,f_auto" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
